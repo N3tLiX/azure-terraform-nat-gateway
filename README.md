@@ -1,11 +1,11 @@
-# azure-terraform-[module_name]
+# azure-terraform-nat-gateway
 
-Create a simple [module_full_name] in Azure
+Create a NAT Gateway in Azure
 
 ## Usage in Terraform 0.13
 ```hcl
 module "example" {
-  source  = "github.com/N3tLiX/modules//[module_folder]"
+  source  = "github.com/N3tLiX/modules//nat"
 }
 ```
 
