@@ -68,6 +68,6 @@ resource "azurerm_nat_gateway_public_ip_prefix_association" "this" {
 
 resource "azurerm_subnet_nat_gateway_association" "this" {
   for_each       = toset(var.subnets_to_associate)
-  subnet_id      = "/subscriptions/${var.subscription_id}/resourceGroups/${var.resource_group_name}/providers/Microsoft.Network/virtualNetworks/${var.virtual_network_name}/subnets/${each.key}"
+  subnet_id      = "/subscriptions/${var.subscription_id}/resourceGroups/${var.virtual_network_resource_group_name}/providers/Microsoft.Network/virtualNetworks/${var.virtual_network_name}/subnets/${each.key}"
   nat_gateway_id = azurerm_nat_gateway.this.id
 }

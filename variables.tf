@@ -63,6 +63,11 @@ variable "virtual_network_name" {
   type        = string
 }
 
+variable "virtual_network_resource_group_name" {
+  description = "(Reqired) Specifies the VNET name."
+  type        = string
+}
+
 variable "tags" {
   description = "A map of the tags to use on the resources that are deployed with this module."
   default     = {}

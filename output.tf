@@ -1,7 +1,7 @@
-output "nat_id" {
+output "id" {
   value = azurerm_nat_gateway.this.id
 }
 
-output "name" {
+output "subnet_associations" {
   value = azurerm_subnet_nat_gateway_association.this
 }
