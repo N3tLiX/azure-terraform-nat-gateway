@@ -46,17 +46,24 @@ variable "prefix_length" {
     error_message = "The number of bits of the prefix is invalid. (check: https://docs.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-address-prefix)."
   }
 }
+
+variable "subscription_id" {
+  description = "(Required) Specifies Subscription ID."
+  type        = string
+}
+
 variable "subnets_to_associate" {
   description = "(Optional) Specifies the subscription id, resource group name, and name of the subnets to associate"
-  type        = map(any)
-  default     = {}
+  type        = list(string)
+  default     = []
+}
+
+variable "virtual_network_name" {
+  description = "(Reqired) Specifies the VNET name."
+  type        = string
 }
 
 variable "tags" {
-  type        = map(string)
   description = "A map of the tags to use on the resources that are deployed with this module."
-
-  default = {
-    source = "Deployed by Terraform"
-  }
+  default     = {}
 }
